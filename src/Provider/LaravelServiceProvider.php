@@ -45,9 +45,9 @@ class LaravelServiceProvider extends DingoServiceProvider
         });
 
         // Validate FormRequest after resolving
-        $this->app->afterResolving(ValidatesWhenResolved::class, function ($resolved) {
-            $resolved->validateResolved();
-        });
+        // $this->app->afterResolving(ValidatesWhenResolved::class, function ($resolved) {
+        //     $resolved->validateResolved();
+        // });
 
         $this->app->resolving(FormRequest::class, function (FormRequest $request, Application $app) {
             $this->initializeRequest($request, $app['request']);
